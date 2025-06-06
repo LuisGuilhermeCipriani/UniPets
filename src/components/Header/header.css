@@ -1,6 +1,10 @@
 .headerContainer {
-    text-align: center;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    width: 100%;
 }
 
 .aboveHeader {
@@ -73,7 +77,7 @@ b {
 .belowHeader {
     background-color: #00985d;
     padding: 0 22px;
-    height: 66px;
+    height: 70px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
