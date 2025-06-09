@@ -4,7 +4,11 @@
 }
 
 .imgCarrossel {
-    width: "100%";
+    width: 100%;
+    margin-top: 50px;
+    display: block;
+    object-fit: cover;
+    cursor: pointer;
 }
 
 .slick-slider {
@@ -77,13 +81,6 @@
     opacity: 1;
 }
 
-.imgCarrossel {
-    width: 100%;
-    margin-top: 50px;
-    display: block;
-    object-fit: cover;
-}
-
 .belowCarousel {
     display: flex;
     background: linear-gradient(to bottom, #f2f2f2 0%, #e6e6e6 50%, #e0e0e0 100%);
@@ -92,6 +89,8 @@
     justify-content: center;
     flex-direction: row;
     margin-top: -4px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .fieldIten {
@@ -101,7 +100,7 @@
     height: 80px;
     align-items: center;
     justify-content: space-evenly;
-    padding: 20px 0px;
+    padding: 50px 0px;
 }
 
 .fieldIten:hover {
@@ -122,4 +121,90 @@
     font-size: 16px;
     color: #31692f;
     margin-right: 20px;
+    text-align: left;
+}
+
+.containerNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quickNavigation {
+    display: flex;
+    width: 70%;
+    height: 100px;
+    background-color: #ffffff;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.horizontalBar {
+    background-color: #828181;
+    width: 450px;
+    height: 2px;
+}
+
+.textNavegation {
+    font-size: 20px;
+    color: #59a12f;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0px 20px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    width: 100%;
+}
+
+.iconsNavegation {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 40px;
+    color: #3b3b3b;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    gap: 60px;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 130px;
+    background-color: #ffffff;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.carousel-item:hover {
+    transform: scale(1.2);
+}
+
+.carousel-icon {
+    width: 88px;
+    height: 70px;
+}
+
+.carousel-text {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #3b3b3b;
+    font-weight: bold;
 }

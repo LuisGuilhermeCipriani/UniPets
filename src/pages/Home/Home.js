@@ -1,18 +1,42 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import Imagem1 from "../../assets/Imagem1.png";
-import Imagem2 from "../../assets/Imagem2.png";
-import Imagem3 from "../../assets/Imagem3.png";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+import "./home.css";
+
+import Image1 from "../../assets/Imagem1.png";
+import Image2 from "../../assets/Imagem2.png";
+import Image3 from "../../assets/Imagem3.png";
 import Agenda from "../../assets/Agenda.png";
 import Coracao from "../../assets/Coracao.png";
 import Medico from "../../assets/Medico.png";
 import Odontologia from "../../assets/Odontologia.png";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Atendimento from "../../assets/Atendimento.png";
+import Boleto from "../../assets/Boleto.png";
+import BoletoDigital from "../../assets/BoletoDigital.png";
+import Cliente from "../../assets/Cliente.png";
+import Contatos from "../../assets/Contatos.png";
+import Guia from "../../assets/Guia.png";
+import Pagamento from "../../assets/Pagamento.png";
+import Resolucao from "../../assets/Resolucao.png";
 
-import "./home.css";
+const icons = [
+    { img: Atendimento, text: "ATENDIMENTO VIA CHAT" },
+    { img: Boleto, text: "2ª VIA DE BOLETO" },
+    { img: BoletoDigital, text: "BOLETO DIGITAL UNIPETS" },
+    { img: Cliente, text: "CLIENTE EMPRESARIAL" },
+    { img: Contatos, text: "ATUALIZAÇÃO DE CONTATOS" },
+    { img: Guia, text: "STATUS DE GUIA" },
+    { img: Pagamento, text: "COMPROVANTE DE PAGAMENTO" },
+    { img: Resolucao, text: "RESOLUÇÃO NORMATIVA" }
+];
+
+const visibleCount = 4;
 
 export default function Home() {
+    const [startIndex, setStartIndex] = useState(0);
 
     const [settings] = useState({
         dots: true,
@@ -24,41 +48,84 @@ export default function Home() {
         autoplaySpeed: 3000
     });
 
-    const [imagens] = useState([
-        Imagem1,
-        Imagem2,
-        Imagem3
-    ]);
+    const images = [Image1, Image2, Image3];
+
+    const getVisibleItems = () => {
+        const visible = [];
+        for (let i = 0; i < visibleCount; i++) {
+            const index = (startIndex + i) % icons.length;
+            visible.push(icons[index]);
+        }
+        return visible;
+    };
+
+    const handleNext = () => {
+        setStartIndex((prevIndex) => (prevIndex + 1) % icons.length);
+    };
+
+    const handlePrev = () => {
+        setStartIndex((prevIndex) =>
+            (prevIndex - 1 + icons.length) % icons.length
+        );
+    };
 
     return (
         <div className="containerHome">
             <Slider {...settings}>
-                {imagens.map(function (url, index) {
-                    return (
-                        <div key={index}>
-                            <img className="imgCarrossel" src={url} alt={`Slide ${index}`} />
-                        </div>
-                    );
-                })}
+                {images.map((url, index) => (
+                    <div key={index}>
+                        <img className="imgCarrossel" src={url} alt={`Slide ${index}`} />
+                    </div>
+                ))}
             </Slider>
+
             <div className="belowCarousel">
                 <div className="fieldIten">
-                    <img className="imgIten" src={Odontologia} alt="Unipets Dental"/>
-                    <text className="textIten">ACESSE AQUI O <br/>GUIA UNIPETS <br/>DENTAL</text>
+                    <img className="imgIten" src={Odontologia} alt="Unipets Dental" />
+                    <p className="textIten">ACESSE AQUI O <br />GUIA UNIPETS <br />DENTAL</p>
                 </div>
                 <div className="fieldIten">
-                    <img className="imgIten" src={Medico} alt="Unipets Dental"/>
-                    <text className="textIten">ACESSE AQUI O <br/>GUIA VETERINÁRIO</text>
+                    <img className="imgIten" src={Medico} alt="Guia Veterinário" />
+                    <p className="textIten">ACESSE AQUI O <br />GUIA VETERINÁRIO</p>
                 </div>
                 <div className="fieldIten">
-                    <img className="imgIten" src={Agenda} alt="Unipets Dental"/>
-                    <text className="textIten">AGENDAMENTO E <br/>RESULTADOS DE <br/>EXAMES</text>
+                    <img className="imgIten" src={Agenda} alt="Agenda" />
+                    <p className="textIten">AGENDAMENTO E <br />RESULTADOS DE <br />EXAMES</p>
                 </div>
                 <div className="fieldIten">
-                    <img className="imgIten" src={Coracao} alt="Unipets Dental"/>
-                    <text className="textIten">QUERO SER CLIENTE</text>
+                    <img className="imgIten" src={Coracao} alt="Quero ser cliente" />
+                    <p className="textIten">QUERO SER CLIENTE</p>
+                </div>
+            </div>
+
+            <div className="containerNavigation">
+                <div className="quickNavigation">
+                    <div className="horizontalBar"></div>
+                    <p className="textNavegation"><b>NAVEGAÇÃO RÁPIDA</b></p>
+                    <div className="horizontalBar"></div>
+                </div>
+            </div>
+
+            <div className="carousel-container">
+                <FaChevronLeft className="iconsNavegation" onClick={handlePrev} />
+                <div className="carousel">
+                    {getVisibleItems().map((item, index) => (
+                        <div key={index} className="carousel-item">
+                            <img className="carousel-icon" src={item.img} alt={item.text} />
+                            <p className="carousel-text">{item.text}</p>
+                        </div>
+                    ))}
+                </div>
+                <FaChevronRight className="iconsNavegation" onClick={handleNext} />
+            </div>
+
+            <div className="containerNavigation">
+                <div className="quickNavigation">
+                    <div className="horizontalBar"></div>
+                    <p className="textNavegation"><b>CUIDAR BEM DO SEU AMIGUINHO. </b>ESSE É O PLANO</p>
+                    <div className="horizontalBar"></div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
