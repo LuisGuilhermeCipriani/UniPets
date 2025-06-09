@@ -21,6 +21,8 @@ import Contatos from "../../assets/Contatos.png";
 import Guia from "../../assets/Guia.png";
 import Pagamento from "../../assets/Pagamento.png";
 import Resolucao from "../../assets/Resolucao.png";
+import Dica1 from "../../assets/Dica1.jpg";
+import Dica2 from "../../assets/Dica2.jpg";
 
 const icons = [
     { img: Atendimento, text: "ATENDIMENTO VIA CHAT" },
@@ -98,32 +100,47 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="containerNavigation">
-                <div className="quickNavigation">
-                    <div className="horizontalBar"></div>
-                    <p className="textNavegation"><b>NAVEGAÇÃO RÁPIDA</b></p>
-                    <div className="horizontalBar"></div>
+            <div className="MainField">
+                <div className="containerNavigation">
+                    <div className="quickNavigation">
+                        <div className="horizontalBar"></div>
+                        <p className="textNavegation"><b>NAVEGAÇÃO RÁPIDA</b></p>
+                        <div className="horizontalBar"></div>
+                    </div>
+                </div>
+
+                <div className="carousel-container">
+                    <FaChevronLeft className="iconsNavegation" onClick={handlePrev} />
+                    <div className="carousel">
+                        {getVisibleItems().map((item, index) => (
+                            <div key={index} className="carousel-item">
+                                <img className="carousel-icon" src={item.img} alt={item.text} />
+                                <p className="carousel-text">{item.text}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <FaChevronRight className="iconsNavegation" onClick={handleNext} />
+                </div>
+
+                <div className="containerNavigation">
+                    <div className="quickNavigation">
+                        <div className="horizontalBar"></div>
+                        <p className="textNavegation"><b>CUIDAR BEM DO SEU AMIGUINHO. </b>ESSE É O PLANO</p>
+                        <div className="horizontalBar"></div>
+                    </div>
                 </div>
             </div>
 
-            <div className="carousel-container">
-                <FaChevronLeft className="iconsNavegation" onClick={handlePrev} />
-                <div className="carousel">
-                    {getVisibleItems().map((item, index) => (
-                        <div key={index} className="carousel-item">
-                            <img className="carousel-icon" src={item.img} alt={item.text} />
-                            <p className="carousel-text">{item.text}</p>
-                        </div>
-                    ))}
+            <div className="tipsField">
+                <div className="imgTips">
+                    <div className="imgTip">
+                        <img src={Dica1} alt="Dica 1" />
+                        <img src={Dica2} alt="Dica 2" />
+                    </div>
                 </div>
-                <FaChevronRight className="iconsNavegation" onClick={handleNext} />
-            </div>
-
-            <div className="containerNavigation">
-                <div className="quickNavigation">
-                    <div className="horizontalBar"></div>
-                    <p className="textNavegation"><b>CUIDAR BEM DO SEU AMIGUINHO. </b>ESSE É O PLANO</p>
-                    <div className="horizontalBar"></div>
+                <div className="moreTips">
+                    <p>VER TODAS AS DICAS</p>
+                    <FaChevronRight/>
                 </div>
             </div>
         </div>
