@@ -140,7 +140,81 @@ export default function Home() {
                 </div>
                 <div className="moreTips">
                     <p>VER TODAS AS DICAS</p>
-                    <FaChevronRight/>
+                    <FaChevronRight />
+                </div>
+            </div>
+
+            <div className="containerNavigation">
+                <div className="quickNavigation">
+                    <div className="horizontalBar"></div>
+                    <p className="textNavegation"><b>CONHEÇA NOSSOS PLANOS</b></p>
+                    <div className="horizontalBar"></div>
+                </div>
+            </div>
+
+            <div className="plansField">
+                <div className="squares">
+
+                    <div className="square" style={{backgroundColor: '#015d52'}}>
+                        <div className="textSquare">
+                            <div className="header">
+                                <span className="textPlan1">UNIPETS PLENO</span>
+                                <span className="textPlan2">(plano individual/familiar, empresarial e coletivo por adesão)</span>
+                            </div>
+                            <div className="footer">
+                                <p className="textPlan3">Um jeito especial de cuidar do seu amiguinho!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="square" style={{backgroundColor: '#e01e53'}}>
+                        <div className="textSquare">
+                            <div className="header">
+                                <span className="textPlan1">UNIPETS FLEX</span>
+                                <span className="textPlan2">(plano individual/familiar, empresarial e coletivo por adesão)</span>
+                            </div>
+                            <div className="footer">
+                                <p className="textPlan3">Cobertura completa ou ambulatorial. Conheça!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="square" style={{backgroundColor: '#196504'}}>
+                        <div className="textSquare">
+                            <div className="header">
+                                <span className="textPlan1">PLANO VETERINÁRIO ZONA DA MATA</span>
+                                <span className="textPlan2">(plano individual/familiar)</span>
+                            </div>
+                            <div className="footer">
+                                <p className="textPlan3">Mensalidade acessível, com acréscimo fixo apenas em internações</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="square" style={{backgroundColor: '#ea7832'}}>
+                        <div className="textSquare">
+                            <div className="header">
+                                <span className="textPlan1">UNIPETS PREMIUM</span>
+                                <span className="textPlan2">(plano individual/familiar, empresarial e coletivo por adesão)</span>
+                            </div>
+                            <div className="footer">
+                                <p className="textPlan3">Nosso plano estadual com o melhor custo-benefício.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="square" style={{backgroundColor: '#ce3d3d'}}>
+                        <div className="textSquare">
+                            <div className="header">
+                                <span className="textPlan1">UNIPETS DENTAL</span>
+                                <span className="textPlan2">(plano empresarial)</span>
+                            </div>
+                            <div className="footer">
+                                <p className="textPlan3">Conheça nossa assistência odontológica!</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
