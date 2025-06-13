@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaFacebook, FaInstagram, FaRegEnvelope } from "react-icons/fa";
+import { IoLogoYoutube, IoLogoFacebook, IoLogoInstagram } from "react-icons/io";
 
 import "./home.css";
 
@@ -26,6 +27,8 @@ import Dica2 from "../../assets/Dica2.jpg";
 import Noticia1 from "../../assets/Noticia1.jpg";
 import Noticia2 from "../../assets/Noticia2.jpg";
 import Noticia3 from "../../assets/Noticia3.jpg";
+import selosQualidade from "../../assets/selosQualidade.png";
+import logoANS from "../../assets/logoANS.png";
 
 const icons = [
     { img: Atendimento, text: "ATENDIMENTO VIA CHAT" },
@@ -242,14 +245,14 @@ export default function Home() {
                         <img className="imgNews" src={Noticia1} alt="Notícia" />
                         <div className="texts">
                             <p className="titleNews">Corrida Unipets reúne mais de 500 participantes</p>
-                            <p className="textNews">Programação incluiu Circuito Saúde, com dezenas de oficinas gratuitas 
+                            <p className="textNews">Programação incluiu Circuito Saúde, com dezenas de oficinas gratuitas
                                 para toda a população abcdefghijklmnopqrstuvwxyz</p> <span className="more">Ver mais</span>
                         </div>
                     </div>
                     <div className="news">
                         <img className="imgNews" src={Noticia2} alt="Notícia" />
                         <div className="texts">
-                            <p className="titleNews">Gincana Unipets bate recorde de inscritos, sendo a maior já realizada 
+                            <p className="titleNews">Gincana Unipets bate recorde de inscritos, sendo a maior já realizada
                                 pela cooperativa</p>
                             <p className="textNews">Inscrições acabaram duas semanas antes do evento, alcançando marca histórica e reforça a...</p> <span className="more">Ver mais</span>
                         </div>
@@ -258,7 +261,7 @@ export default function Home() {
                         <img className="imgNews" src={Noticia3} alt="Notícia" />
                         <div className="texts">
                             <p className="titleNews">Unipets promove "Cachorródromo", com vagas gratuitas para toda população</p>
-                            <p className="textNews">Evento integra a programação do Circuito Saúde que, este ano, terá dois dias: 
+                            <p className="textNews">Evento integra a programação do Circuito Saúde que, este ano, terá dois dias:
                                 7 e 8 de junho...</p> <span className="more">Ver mais</span>
                         </div>
                     </div>
@@ -268,6 +271,62 @@ export default function Home() {
                         <p>VER MAIS NOTÍCIAS</p>
                         <FaChevronRight />
                     </div>
+                </div>
+            </div>
+
+            <div className="containerFooter">
+                <div className="fieldFooter">
+                    <div className="linksField">
+                        <p className="styleLink1">Unipets</p>
+                        <p className="footerBar"></p>
+                        <p className="styleLink2">A Unipets</p>
+                        <p className="styleLink2">Produtos</p>
+                        <p className="styleLink2">Benefícios e Diferenciais</p>
+                        <p className="styleLink2">Relatórios</p>
+                        <p className="styleLink2">Serviços</p>
+                        <p className="styleLink2">Serviços Próprios</p>
+                        <p className="styleLink2">Fale Conosco</p>
+                        <p className="styleLink2">Acesso Restrito</p>
+                        <p className="styleLink2">Trabalhe Conosco</p>
+                        <p className="styleLink2">Termos de Uso</p>
+                        <p className="styleLink2">Portal de Privacidade</p>
+                        <p className="styleLink2">Telefones Úteis</p>
+                        <p className="styleLink2">Espaço do Fornecedor</p>
+                    </div>
+
+                    <div className="linksField">
+                        <div className="links1">
+                            <p className="styleLink1">Siga-nos nas redes sociais</p>
+                            <p className="footerBar"></p>
+                            <div className="socialMedias">
+                                <IoLogoFacebook className="media" />
+                                <IoLogoYoutube className="media" />
+                                <IoLogoInstagram className="media" />
+                            </div>
+                        </div>
+                        <div className="links3">
+                            <p className="styleLink1">Webmail</p>
+                            <p className="footerBar"></p>
+                            <div className="email">
+                                <FaRegEnvelope />
+                                <span>Acessar webmail</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="linksField">
+                        <div className="links1">
+                            <p className="styleLink1">Qualidade</p>
+                            <p className="footerBar"></p>
+                            <img className="selosQualidade" src={selosQualidade} alt="Selos de Qualidade"/>
+                        </div>
+                        <div className="links2">
+                            <p className="styleLink1">Operadora Certificada pela ANS</p>
+                            <p className="footerBar"></p>
+                            <img className="logoANS" src={logoANS} alt="ANS" />
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

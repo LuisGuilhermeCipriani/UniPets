@@ -440,3 +440,110 @@
     text-decoration: underline;
     color: #017c23;
 }
+
+.containerFooter {
+    display: flex;
+    width: 100%;
+    background-color: #005d51;
+    justify-content: center;
+    padding: 50px 0;
+    margin-top: 90px;
+}
+
+.fieldFooter {
+    display: flex;
+    width: 80%;
+    gap: 50px;
+}
+
+.linksField {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.styleLink1 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.footerBar {
+    width: 100%;
+    height: 4px;
+    background-color: #8dc63f;
+    margin: 3px 0;
+}
+
+.styleLink2 {
+    margin: 2px 0;
+}
+
+.styleLink2:hover {
+    color: #8dc63f;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.links1 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.socialMedias {
+    display: flex;
+}
+
+.media {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 30px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.links2 {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.links3 {
+    margin-top: 45px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.email {
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+    align-items: center;
+    justify-content: space-around;
+    padding: 6px 3px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    margin-top: 10px;
+}
+
+.email:hover {
+    color: #8dc63f;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 2px solid #8dc63f;
+}
+
+.selosQualidade {
+    margin-top: 5px;
+}
+
+.logoANS {
+    width: 100px;
+    margin-top: 10px;
+    cursor: pointer;
+}
